@@ -40,4 +40,28 @@ Desde la carpeta `frontend`:
 ```bash
 npm run dev
 ```
-La aplicación será accesible en la URL que indique Vite (por ejemplo `http://localhost:5173`).
+Configuración para Despliegue (Deploy)
+
+Este proyecto ha sido preparado para ser desplegado en plataformas como Render, Railway o Vercel.
+
+### Variables de Entorno Requeridas
+
+Para que la aplicación funcione correctamente en producción, configure las siguientes variables de entorno en su servicio de hosting:
+
+**Backend:**
+- `PORT`: El puerto donde correrá el servidor (generalmente asignado automáticamente por el hosting).
+- (Otras variables ya existentes como credenciales de DB deben mantenerse).
+
+**Frontend:**
+- `VITE_API_URL`: La URL completa de su backend desplegado (ej: `https://mi-backend.onrender.com/api`).
+  *Nota: Si su backend se despliega en una URL raíz diferente, asegúrese de incluir `/api` al final si así lo requieren sus rutas.*
+
+### Scripts de Ejecución en Producción
+
+**Backend:**
+- Comando de Start: `npm start`
+- Comando de Build: No requiere (Node.js nativo).
+
+**Frontend:**
+- Comando de Build: `npm run build`
+- Comando de Start: Dependerá del servicio de hosting (generalmente se sirven los archivos estáticos de la carpeta `dist`).

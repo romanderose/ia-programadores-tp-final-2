@@ -1,0 +1,20 @@
+Resumen de Cambios para Despliegue
+
+Este documento detalla las modificaciones realizadas en el proyecto para habilitar su despliegue en un entorno de hosting (como Render, Railway, etc.), cumpliendo con la restricción de NO alterar la lógica de negocio ni el código funcional de la aplicación.
+
+Cambios realizados:
+
+1. Backend - package.json:
+   - Se agregó el script "start": "node src/app.js".
+   - Motivo: Los servicios de hosting utilizan `npm start` por defecto para ejecutar la aplicación en producción.
+
+2. Backend - src/app.js:
+   - Se modificó la asignación del puerto para usar `process.env.PORT || 3001`.
+   - Motivo: En producción, el hosting asigna un puerto dinámico a través de la variable de entorno `PORT`. Sin esto, la aplicación fallaría al intentar iniciarse.
+
+3. Frontend - Servicios (apiService.ts, authService.ts):
+   - Se reemplazaron las URLs hardcodeadas (`http://localhost:3001...`) por la variable de entorno `import.meta.env.VITE_API_URL`.
+   - Motivo: En producción, el frontend debe comunicarse con el backend desplegado, no con localhost. Esto permite configurar la URL del backend desde las variables de entorno del hosting.
+
+Conclusión:
+La aplicación ahora es "agnóstica" al entorno. Funciona en local exactamente igual que antes (usando los valores de fallback a localhost), pero ahora tiene la capacidad de recibir configuración externa para funcionar correctamente en la nube.
