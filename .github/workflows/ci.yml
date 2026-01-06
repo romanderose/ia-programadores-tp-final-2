@@ -20,13 +20,13 @@ jobs:
           node-version: 18
 
       - name: Instalar dependencias del backend
-        working-directory: backend
+        working-directory: app-de-gestion-de-mascotas/backend
         run: npm install
 
       - name: Ejecutar tests
-        working-directory: backend
+        working-directory: app-de-gestion-de-mascotas/backend
         run: npm test
 
       - name: Ejecutar tests con coverage
-        working-directory: backend
+        working-directory: app-de-gestion-de-mascotas/backend
         run: npm run test:coverage

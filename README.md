@@ -4,6 +4,7 @@ Este repositorio contiene el código fuente del trabajo final de IA para Program
 
 ## Estructura de Carpetas
 
+- **.github/workflows/**: Definición de pipelines de CI (ci.yml).
 - **app-de-gestion-de-mascotas/**: Contiene el código fuente de la aplicación.
   - **backend/**: API REST desarrollada con Node.js y Express.
   - **frontend/**: Interfaz de usuario desarrollada con React y Vite.
@@ -70,13 +71,16 @@ Para que la aplicación funcione correctamente en producción, configure las sig
 
 Este proyecto incluye un pipeline automatizado de Integración Continua utilizando **GitHub Actions**.
 
+### Corrección Implementada
+Se detectó un error en el workflow original donde la ruta al backend no era correcta. Se corrigió el archivo `.github/workflows/ci.yml` para que apunte a `app-de-gestion-de-mascotas/backend`, asegurando que los tests y la instalación de dependencias se ejecuten en el directorio correcto.
+
 ### ¿Qué hace?
 El workflow de CI (`.github/workflows/ci.yml`) se encarga de verificar automáticamente la integridad del código del **Backend** cada vez que se realizan cambios en la rama principal.
 
 ### Pasos del pipeline:
 1. **Checkout**: Clona el repositorio para acceder al código.
 2. **Setup Node.js**: Configura un entorno de Node.js (versión 18).
-3. **Instalación**: Instala las dependencias del backend (`npm install`).
+3. **Instalación**: Instala las dependencias del backend (`npm install`) en la ruta correcta.
 4. **Pruebas (Tests)**: Ejecuta la suite de pruebas unitarias (`npm test`) para asegurar que no existan regresiones.
 5. **Coverage**: Ejecuta las pruebas con reporte de cobertura de código (`npm run test:coverage`).
 
