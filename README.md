@@ -65,3 +65,22 @@ Para que la aplicación funcione correctamente en producción, configure las sig
 **Frontend:**
 - Comando de Build: `npm run build`
 - Comando de Start: Dependerá del servicio de hosting (generalmente se sirven los archivos estáticos de la carpeta `dist`).
+
+## Integración Continua (CI)
+
+Este proyecto incluye un pipeline automatizado de Integración Continua utilizando **GitHub Actions**.
+
+### ¿Qué hace?
+El workflow de CI (`.github/workflows/ci.yml`) se encarga de verificar automáticamente la integridad del código del **Backend** cada vez que se realizan cambios en la rama principal.
+
+### Pasos del pipeline:
+1. **Checkout**: Clona el repositorio para acceder al código.
+2. **Setup Node.js**: Configura un entorno de Node.js (versión 18).
+3. **Instalación**: Instala las dependencias del backend (`npm install`).
+4. **Pruebas (Tests)**: Ejecuta la suite de pruebas unitarias (`npm test`) para asegurar que no existan regresiones.
+5. **Coverage**: Ejecuta las pruebas con reporte de cobertura de código (`npm run test:coverage`).
+
+### ¿Cuándo se ejecuta?
+- En cada **Push** a la rama `main`.
+- En cada **Pull Request** dirigido a la rama `main`.
+

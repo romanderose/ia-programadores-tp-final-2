@@ -54,6 +54,9 @@ export function DashboardDueno({ onNavigate, onStartAppointment, onLogout }: Das
     loadData();
   }, []);
 
+  /**
+   * Carga los datos iniciales (mascotas y turnos) desde la API.
+   */
   const loadData = async () => {
     try {
       setLoading(true);
@@ -70,6 +73,9 @@ export function DashboardDueno({ onNavigate, onStartAppointment, onLogout }: Das
     }
   };
 
+  /**
+   * Cierra la sesión del usuario y limpia el almacenamiento local.
+   */
   const handleLogout = () => {
     localStorage.removeItem('token');
     localStorage.removeItem('user');

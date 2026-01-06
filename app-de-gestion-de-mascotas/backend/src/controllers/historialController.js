@@ -7,6 +7,9 @@
 
 const db = require('../db');
 
+/**
+ * Obtiene el historial médico completo de las mascotas del usuario.
+ */
 exports.getAll = async (req, res) => {
     try {
         // Obtenemos historial uniendo con mascotas para ver el nombre y filtrar por usuario si fuera necesario
@@ -26,6 +29,9 @@ exports.getAll = async (req, res) => {
     }
 };
 
+/**
+ * Crea una nueva entrada en el historial médico.
+ */
 exports.create = async (req, res) => {
     const { mascota_id, veterinario, fecha, tipo, diagnostico, sucursal } = req.body;
     try {

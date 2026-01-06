@@ -7,6 +7,9 @@
 
 const db = require('../db');
 
+/**
+ * Obtiene todos los turnos agendados por el usuario.
+ */
 exports.getAll = async (req, res) => {
     try {
         // Obtenemos los turnos con el nombre de la mascota
@@ -25,6 +28,9 @@ exports.getAll = async (req, res) => {
     }
 };
 
+/**
+ * Agenda un nuevo turno veterinario.
+ */
 exports.create = async (req, res) => {
     const { mascota_id, veterinario, fecha, hora, sucursal } = req.body;
     try {

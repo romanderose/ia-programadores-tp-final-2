@@ -8,6 +8,9 @@
 
 const db = require('../db');
 
+/**
+ * Obtiene todos los registros clínicos (Deprecated).
+ */
 exports.getAll = async (req, res) => {
     try {
         const sql = 'SELECT * FROM registros_clinicos WHERE usuario_id = ?';
@@ -19,6 +22,9 @@ exports.getAll = async (req, res) => {
     }
 };
 
+/**
+ * Crea un nuevo registro clínico manualmente.
+ */
 exports.create = async (req, res) => {
     const { mascota_id, nota_inicial, fecha, tipo, detalle, estado } = req.body;
     try {
@@ -33,6 +39,9 @@ exports.create = async (req, res) => {
     }
 };
 
+/**
+ * Verifica si una mascota tiene registros clínicos asociados.
+ */
 exports.checkPetHasRecords = async (req, res) => {
     try {
         const { mascotaId } = req.params;

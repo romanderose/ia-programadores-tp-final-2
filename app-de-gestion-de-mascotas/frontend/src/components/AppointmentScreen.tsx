@@ -43,8 +43,12 @@ export function AppointmentScreen({ onNavigate, pets, selectedBranch }: Appointm
     ]
   };
 
+  // Veterinarios filtrados por sucursal selectedBranch.id
   const veterinarians = veterinariansByBranch[selectedBranch.id] || [];
 
+  /**
+   * Maneja el envío del formulario de reserva.
+   */
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     alert("Turno confirmado exitosamente");

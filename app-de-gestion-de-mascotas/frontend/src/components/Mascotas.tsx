@@ -62,6 +62,9 @@ export function Mascotas({ onBack, initialMode = 'list' }: MascotasProps) {
     if (initialMode === 'create') handleCreate();
   }, [initialMode]);
 
+  /**
+   * Carga la lista de mascotas desde el backend API.
+   */
   const loadMascotas = async () => {
     try {
       setLoading(true);
@@ -97,6 +100,9 @@ export function Mascotas({ onBack, initialMode = 'list' }: MascotasProps) {
     setShowForm(true);
   };
 
+  /**
+   * Maneja la subida de una imagen local y la convierte a Base64.
+   */
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const file = e.target.files?.[0];
     if (file) {
@@ -108,6 +114,9 @@ export function Mascotas({ onBack, initialMode = 'list' }: MascotasProps) {
     }
   };
 
+  /**
+   * Envía los datos del formulario para crear o actualizar una mascota.
+   */
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {

@@ -68,6 +68,9 @@ export function ConfirmarTurno({
     }).catch(err => console.error(err));
   }, [mascotaId]);
 
+  /**
+   * Formatea la fecha seleccionada para mostrarla amigablemente.
+   */
   const formatFecha = (fechaStr: string) => {
     const date = new Date(fechaStr + 'T00:00:00');
     const dia = diasSemana[date.getDay()];
@@ -76,6 +79,9 @@ export function ConfirmarTurno({
     return `${dia} ${diaNum} de ${mes}`;
   };
 
+  /**
+   * Confirma la reserva enviando los datos a la API.
+   */
   const handleConfirm = async () => {
     try {
       setLoading(true);

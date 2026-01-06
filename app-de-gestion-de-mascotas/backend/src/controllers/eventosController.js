@@ -8,6 +8,9 @@
 
 const db = require('../db');
 
+/**
+ * Crea un nuevo evento clínico asociado a un historial.
+ */
 exports.create = async (req, res) => {
     const { historial_id, fecha, tipo, detalle, estado } = req.body;
 
@@ -40,6 +43,9 @@ exports.create = async (req, res) => {
     }
 };
 
+/**
+ * Actualiza los detalles de un evento clínico existente.
+ */
 exports.update = async (req, res) => {
     const { id } = req.params;
     const { fecha, tipo, detalle, estado } = req.body;
@@ -69,6 +75,9 @@ exports.update = async (req, res) => {
     }
 };
 
+/**
+ * Elimina un evento clínico.
+ */
 exports.delete = async (req, res) => {
     const { id } = req.params;
 

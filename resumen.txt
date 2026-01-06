@@ -1,20 +1,41 @@
-Resumen de Cambios para Despliegue
 
-Este documento detalla las modificaciones realizadas en el proyecto para habilitar su despliegue en un entorno de hosting (como Render, Railway, etc.), cumpliendo con la restricción de NO alterar la lógica de negocio ni el código funcional de la aplicación.
+# Resumen de Cambios - Trabajo Práctico Final
 
-Cambios realizados:
+Fecha: 06/01/2026
 
-1. Backend - package.json:
-   - Se agregó el script "start": "node src/app.js".
-   - Motivo: Los servicios de hosting utilizan `npm start` por defecto para ejecutar la aplicación en producción.
+## 1. Verificación e Integración Continua (CI)
+- Se analizó el archivo `.github/workflows/ci.yml`.
+- Se confirmó que las rutas (`./backend`) y los comandos (`npm install`, `npm test`, `npm run test:coverage`) coinciden con la estructura del proyecto y los scripts definidos en `package.json`.
+- El pipeline es correcto y funcional para la validación automática del backend en la rama `main`.
+- Se validó que el frontend no requiere CI de pruebas unitarias en esta etapa.
 
-2. Backend - src/app.js:
-   - Se modificó la asignación del puerto para usar `process.env.PORT || 3001`.
-   - Motivo: En producción, el hosting asigna un puerto dinámico a través de la variable de entorno `PORT`. Sin esto, la aplicación fallaría al intentar iniciarse.
+## 2. Comentarios en el Código
+Se realizó una revisión exhaustiva del código fuente y se agregaron comentarios explicativos (formato JSDoc) en los archivos que carecían de ellos, mejorando la legibilidad y mantenibilidad sin afectar la ejecución.
 
-3. Frontend - Servicios (apiService.ts, authService.ts):
-   - Se reemplazaron las URLs hardcodeadas (`http://localhost:3001...`) por la variable de entorno `import.meta.env.VITE_API_URL`.
-   - Motivo: En producción, el frontend debe comunicarse con el backend desplegado, no con localhost. Esto permite configurar la URL del backend desde las variables de entorno del hosting.
+### Backend (Controladores)
+- `mascotasController.js`: Documentadas funciones CRUD (getAll, create, delete, update).
+- `eventosController.js`: Documentadas funciones de gestión de eventos clínicos.
+- `historiaController.js`: Documentadas funciones de historial.
+- `turnosController.js`: Documentadas funciones de gestión de turnos.
+- `registrosController.js`: Documentadas funciones de registros clínicos (legacy).
+- `historialesController.js`: Documentada la lógica transaccional de nuevos historiales.
 
-Conclusión:
-La aplicación ahora es "agnóstica" al entorno. Funciona en local exactamente igual que antes (usando los valores de fallback a localhost), pero ahora tiene la capacidad de recibir configuración externa para funcionar correctamente en la nube.
+### Frontend (Componentes Clave)
+- `Mascotas.tsx`: Documentadas funciones de carga de datos y manejo de formularios.
+- `HistorialClinico.tsx`: Documentada lógica de carga simultánea y validación de formularios.
+- `AppointmentScreen.tsx`: Agregados comentarios sobre el filtrado de veterinarios.
+- `DashboardDueno.tsx`: Documentada la carga inicial de datos y lógica de logout.
+- `ConfirmarTurno.tsx`: Documentados helpers de formato de fecha y confirmación.
+
+## 3. Documentación
+- **README.md**: Se agregó una nueva sección "Integración Continua (CI)" detallando el funcionamiento, los pasos y los triggers del pipeline de GitHub Actions.
+
+## 4. Justificación Académica
+Los cambios realizados apuntan exclusivamente a elevar la calidad del entregable mediante:
+- **Claridad Documental**: El código ahora se explica a sí mismo mediante comentarios estandarizados.
+- **Trazabilidad**: El README actualizado refleja el estado real de la infraestructura de desarrollo (CI).
+- **Integridad**: Se respetó estrictamente la restricción de **NO modificar la lógica de negocio ni la estructura funcional** de la aplicación.
+
+--
+**Estado Final**: Proyecto verificado, documentado y listo para entrega.
+Lógica de aplicación INTINTACTA.

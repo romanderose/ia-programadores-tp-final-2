@@ -8,6 +8,9 @@
 
 const db = require('../db');
 
+/**
+ * Obtiene todos los historiales clínicos y sus eventos asociados.
+ */
 exports.getAll = async (req, res) => {
     try {
         // Get all clinical histories for user's pets with events
@@ -45,6 +48,9 @@ exports.getAll = async (req, res) => {
     }
 };
 
+/**
+ * Verifica si una mascota ya posee un historial clínico.
+ */
 exports.checkPetHasHistory = async (req, res) => {
     try {
         const { mascotaId } = req.params;
@@ -72,6 +78,9 @@ exports.checkPetHasHistory = async (req, res) => {
     }
 };
 
+/**
+ * Crea un nuevo historial clínico junto con su primer evento (Transaccional).
+ */
 exports.create = async (req, res) => {
     const { mascota_id, nota_inicial, primer_evento } = req.body;
 

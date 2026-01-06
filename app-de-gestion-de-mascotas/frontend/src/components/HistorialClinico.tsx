@@ -85,6 +85,9 @@ export function HistorialClinico({ onBack }: HistorialClinicoProps) {
     loadData();
   }, []);
 
+  /**
+   * Carga historiales y lista de mascotas simultáneamente.
+   */
   const loadData = async () => {
     try {
       setLoading(true);
@@ -101,6 +104,9 @@ export function HistorialClinico({ onBack }: HistorialClinicoProps) {
     }
   };
 
+  /**
+   * Al seleccionar una mascota, verifica si ya tiene un historial creado.
+   */
   const handlePetSelect = async (petId: number) => {
     setSelectedPetId(petId);
     setPetHasHistory(false);

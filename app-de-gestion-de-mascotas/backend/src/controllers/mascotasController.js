@@ -7,6 +7,9 @@
 
 const db = require('../db');
 
+/**
+ * Obtiene todas las mascotas de un usuario específico.
+ */
 exports.getAll = async (req, res) => {
     try {
         const [rows] = await db.query('SELECT * FROM mascotas WHERE usuario_id = ?', [req.userId]);
@@ -17,6 +20,9 @@ exports.getAll = async (req, res) => {
     }
 };
 
+/**
+ * Crea una nueva mascota para el usuario autenticado.
+ */
 exports.create = async (req, res) => {
     const { nombre, tipo, raza, edad, peso, foto } = req.body;
     try {
@@ -31,6 +37,9 @@ exports.create = async (req, res) => {
     }
 };
 
+/**
+ * Elimina una mascota por su ID, asegurando que pertenezca al usuario.
+ */
 exports.delete = async (req, res) => {
     const { id } = req.params;
     try {
@@ -42,6 +51,9 @@ exports.delete = async (req, res) => {
     }
 };
 
+/**
+ * Actualiza los datos de una mascota existente.
+ */
 exports.update = async (req, res) => {
     const { id } = req.params;
     const { nombre, tipo, raza, edad, peso, foto } = req.body;
