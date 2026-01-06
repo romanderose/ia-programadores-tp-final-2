@@ -1,3 +1,11 @@
+/**
+ * eventosController.js
+ * 
+ * Controlador para los Eventos Clínicos.
+ * Los eventos son entradas individuales dentro de un Historial Clínico.
+ * Maneja creación, edición y eliminación de eventos.
+ */
+
 const db = require('../db');
 
 exports.create = async (req, res) => {

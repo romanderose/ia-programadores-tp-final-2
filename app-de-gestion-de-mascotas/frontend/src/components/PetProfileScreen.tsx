@@ -1,3 +1,10 @@
+/**
+ * PetProfileScreen.tsx
+ * 
+ * Pantalla de perfil individual de una mascota.
+ * Muestra información detallada y opciones específicas (Historial, Turnos).
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { ArrowLeft, FileText, Plus, Calendar } from "lucide-react";

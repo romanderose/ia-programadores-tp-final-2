@@ -1,3 +1,10 @@
+/**
+ * historialController.js
+ * 
+ * Controlador para el historial médico simple.
+ * (Nota: Este controlador parece ser una versión simplificada o alternativa a historialesController).
+ */
+
 const db = require('../db');
 
 exports.getAll = async (req, res) => {

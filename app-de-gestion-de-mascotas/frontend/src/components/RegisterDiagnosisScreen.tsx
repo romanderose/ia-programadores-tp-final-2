@@ -1,3 +1,10 @@
+/**
+ * RegisterDiagnosisScreen.tsx
+ * 
+ * Pantalla para que el veterinario registre un nuevo diagnóstico.
+ * Incluye formulario para seleccionar mascota, ingresar diagnóstico, tratamiento y adjuntar archivos.
+ */
+
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";

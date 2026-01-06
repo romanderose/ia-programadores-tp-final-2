@@ -1,3 +1,10 @@
+/**
+ * OwnerDashboardScreen.tsx
+ * 
+ * Pantalla principal (Dashboard) para el dueño de mascotas.
+ * Muestra acciones rápidas, lista de mascotas y próximos turnos.
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Plus, Calendar, FileText, ChevronRight, LogOut, MapPin } from "lucide-react";
@@ -13,13 +20,13 @@ interface OwnerDashboardScreenProps {
   appointments: Appointment[];
 }
 
-export function OwnerDashboardScreen({ 
-  onNavigate, 
-  onLogout, 
-  userName, 
+export function OwnerDashboardScreen({
+  onNavigate,
+  onLogout,
+  userName,
   selectedBranch,
   pets,
-  appointments 
+  appointments
 }: OwnerDashboardScreenProps) {
   return (
     <div className="h-full flex flex-col bg-emerald-50">

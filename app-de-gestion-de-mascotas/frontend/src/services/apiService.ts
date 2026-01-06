@@ -1,3 +1,11 @@
+/**
+ * apiService.ts
+ * 
+ * Servicio centralizado para realizar peticiones a la API del Backend (excepto Auth).
+ * Maneja Mascotas, Turnos, Historiales, Registros y Eventos.
+ * Incluye automáticamente el token JWT en los headers.
+ */
+
 const API_URL = 'http://localhost:3001/api';
 
 function getHeaders() {

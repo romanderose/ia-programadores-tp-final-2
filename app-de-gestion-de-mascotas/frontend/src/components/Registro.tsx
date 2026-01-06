@@ -1,3 +1,10 @@
+/**
+ * Registro.tsx
+ * 
+ * Componente de pantalla de registro de nuevos usuarios.
+ * Valida que el usuario no exista y que las contraseñas coincidan antes de crear la cuenta.
+ */
+
 import { useState } from 'react';
 import { useTheme } from '../contexts/ThemeContext';
 import { ThemeSelector } from './ThemeSelector';
@@ -25,7 +32,7 @@ export function Registro({ onBack }: RegistroProps) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault(); // Evita que la página se recargue al enviar el formulario
     setError('');
-    
+
     // Validación previa: si no coinciden las claves, ni siquiera intentamos ir a la base de datos
     if (!passwordsMatch) {
       setError('Las contraseñas no coinciden');
@@ -33,7 +40,7 @@ export function Registro({ onBack }: RegistroProps) {
     }
 
     setIsLoading(true); // Bloqueamos el botón de registro
-    
+
     try {
       /**
        * PASO 1: Consultar la disponibilidad del nombre de usuario.
@@ -52,7 +59,7 @@ export function Registro({ onBack }: RegistroProps) {
        * Es fundamental que el backend reciba la contraseña y le aplique un hash (con bcrypt) antes de guardarla.
        */
       const result = await registerUser(username, password);
-      
+
       if (result.success) {
         // Si el backend responde OK (status 200/201), avisamos y volvemos al Login
         alert(result.message || 'Usuario registrado exitosamente');
@@ -141,8 +148,8 @@ export function Registro({ onBack }: RegistroProps) {
         {/* Mensaje visual de validación de contraseñas */}
         {showValidation && (
           <div className={`text-center mt-2 ${passwordsMatch ? 'text-green-500' : 'text-red-500'}`}>
-            {passwordsMatch 
-              ? '✓ Las contraseñas coinciden' 
+            {passwordsMatch
+              ? '✓ Las contraseñas coinciden'
               : '✗ Las contraseñas no coinciden'}
           </div>
         )}
@@ -158,11 +165,10 @@ export function Registro({ onBack }: RegistroProps) {
         <button
           type="submit"
           disabled={!passwordsMatch || isLoading}
-          className={`w-full py-3 rounded-xl transition-all shadow-lg mt-6 ${
-            passwordsMatch
+          className={`w-full py-3 rounded-xl transition-all shadow-lg mt-6 ${passwordsMatch
               ? `${colors.primary} ${colors.primaryHover} text-white`
               : `${colors.disabled} ${colors.disabledText} cursor-not-allowed opacity-50`
-          }`}
+            }`}
         >
           {isLoading ? 'Registrando...' : 'Registrarse'}
         </button>

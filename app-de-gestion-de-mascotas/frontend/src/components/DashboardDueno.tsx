@@ -1,3 +1,11 @@
+/**
+ * DashboardDueno.tsx
+ * 
+ * Pantalla principal para el usuario con rol de "Dueño".
+ * Muestra un resumen de sus mascotas, próximos turnos y acciones rápidas.
+ * Carga datos iniciales desde la API al montarse.
+ */
+
 import { Screen } from '../App';
 import { Calendar, Plus, FileText, LogOut } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';

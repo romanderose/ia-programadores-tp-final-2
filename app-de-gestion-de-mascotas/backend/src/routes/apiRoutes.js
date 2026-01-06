@@ -1,3 +1,10 @@
+/**
+ * apiRoutes.js
+ * 
+ * Define las rutas principales de la API para la gestión de datos.
+ * Todas estas rutas están protegidas por el middleware de autenticación.
+ */
+
 const express = require('express');
 const router = express.Router();
 const authMiddleware = require('../middleware/authMiddleware');

@@ -1,3 +1,10 @@
+/**
+ * ElegirVeterinario.tsx
+ * 
+ * Paso 3 del flujo de reserva de turnos: Selección de Veterinario.
+ * Muestra los profesionales disponibles para la sucursal seleccionada previamente.
+ */
+
 import { ChevronLeft } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 

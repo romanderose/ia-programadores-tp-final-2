@@ -1,3 +1,9 @@
+/**
+ * AppointmentScreen.tsx
+ * 
+ * Pantalla para la gestión de citas y turnos.
+ */
+
 import { useState } from "react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";

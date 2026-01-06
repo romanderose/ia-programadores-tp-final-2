@@ -1,5 +1,17 @@
 const jwt = require('jsonwebtoken');
 
+/**
+ * Middleware de Autenticación
+ * 
+ * Verifica si la petición tiene un token JWT válido en los headers.
+ * Si es válido, decodifica el token y añade el ID del usuario a la request.
+ * Si no es válido o no existe, devuelve un error.
+ * 
+ * @param {Object} req - Objeto de solicitud (Request)
+ * @param {Object} res - Objeto de respuesta (Response)
+ * @param {Function} next - Función para pasar al siguiente middleware/controlador
+ */
+
 module.exports = (req, res, next) => {
     // 1. Get token from header
     const token = req.headers['authorization'];

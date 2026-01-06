@@ -1,3 +1,10 @@
+/**
+ * mascotasController.js
+ * 
+ * Controlador para la gestión de mascotas.
+ * Permite obtener, crear, actualizar y eliminar mascotas asociadas a un usuario.
+ */
+
 const db = require('../db');
 
 exports.getAll = async (req, res) => {

@@ -1,3 +1,9 @@
+/**
+ * BranchSelectionScreen.tsx
+ * 
+ * Pantalla para la selección de sucursal veterinaria.
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { MapPin, Clock } from "lucide-react";
@@ -23,7 +29,7 @@ export function BranchSelectionScreen({ branches, onSelectBranch }: BranchSelect
           {branches.map((branch) => (
             <Card key={branch.id} className="p-5 rounded-2xl border-emerald-200 bg-white shadow-md hover:shadow-lg transition-shadow">
               <h2 className="text-emerald-900 mb-3">{branch.name}</h2>
-              
+
               <div className="space-y-2 mb-4">
                 <div className="flex items-start gap-3">
                   <MapPin className="size-5 text-emerald-600 mt-0.5 flex-shrink-0" />

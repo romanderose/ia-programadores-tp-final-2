@@ -1,3 +1,9 @@
+/**
+ * LoginScreen.tsx
+ * 
+ * Pantalla contenedora del inicio de sesión.
+ */
+
 import { useState } from "react";
 import { Input } from "./ui/input";
 import { Button } from "./ui/button";
@@ -42,22 +48,20 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
               <button
                 type="button"
                 onClick={() => setSelectedRole("owner")}
-                className={`h-12 rounded-xl border-2 transition-all ${
-                  selectedRole === "owner"
+                className={`h-12 rounded-xl border-2 transition-all ${selectedRole === "owner"
                     ? "border-emerald-600 bg-emerald-600 text-white shadow-md"
                     : "border-emerald-200 bg-white text-emerald-700 hover:border-emerald-300"
-                }`}
+                  }`}
               >
                 Dueño
               </button>
               <button
                 type="button"
                 onClick={() => setSelectedRole("vet")}
-                className={`h-12 rounded-xl border-2 transition-all ${
-                  selectedRole === "vet"
+                className={`h-12 rounded-xl border-2 transition-all ${selectedRole === "vet"
                     ? "border-emerald-600 bg-emerald-600 text-white shadow-md"
                     : "border-emerald-200 bg-white text-emerald-700 hover:border-emerald-300"
-                }`}
+                  }`}
               >
                 Veterinario
               </button>
@@ -94,8 +98,8 @@ export function LoginScreen({ onLogin }: LoginScreenProps) {
             />
           </div>
 
-          <Button 
-            type="submit" 
+          <Button
+            type="submit"
             className="w-full h-12 rounded-xl bg-emerald-600 hover:bg-emerald-700 shadow-md"
           >
             Ingresar

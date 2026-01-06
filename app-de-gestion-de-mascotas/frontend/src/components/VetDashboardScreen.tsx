@@ -1,3 +1,10 @@
+/**
+ * VetDashboardScreen.tsx
+ * 
+ * Pantalla principal (Dashboard) para el veterinario.
+ * Muestra estadísticas del día, acciones rápidas y lista de turnos de hoy.
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { Calendar, FileText, LogOut, Clock, User, MapPin, Stethoscope } from "lucide-react";
@@ -11,12 +18,12 @@ interface VetDashboardScreenProps {
   appointments: Appointment[];
 }
 
-export function VetDashboardScreen({ 
-  onNavigate, 
-  onLogout, 
-  vetName, 
+export function VetDashboardScreen({
+  onNavigate,
+  onLogout,
+  vetName,
   selectedBranch,
-  appointments 
+  appointments
 }: VetDashboardScreenProps) {
   return (
     <div className="h-full flex flex-col bg-emerald-50">
@@ -104,11 +111,10 @@ export function VetDashboardScreen({
                     <div className="flex-1">
                       <div className="flex items-start justify-between mb-1">
                         <h3 className="text-emerald-900">{appointment.petName}</h3>
-                        <span className={`text-emerald-600 px-2 py-1 rounded-lg text-sm ${
-                          appointment.status === "Confirmado"
+                        <span className={`text-emerald-600 px-2 py-1 rounded-lg text-sm ${appointment.status === "Confirmado"
                             ? "bg-green-100 text-green-700"
                             : "bg-yellow-100 text-yellow-700"
-                        }`}>
+                          }`}>
                           {appointment.status}
                         </span>
                       </div>

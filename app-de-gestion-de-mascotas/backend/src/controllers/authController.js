@@ -1,3 +1,10 @@
+/**
+ * authController.js
+ * 
+ * Controlador para la autenticación de usuarios.
+ * Maneja el registro, inicio de sesión (login) y verificación de usuarios.
+ */
+
 const bcrypt = require('bcrypt');
 const db = require('../db'); // Conexión a MySQL configurada con promesas
 const jwt = require('jsonwebtoken');

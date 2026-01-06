@@ -1,3 +1,10 @@
+/**
+ * authService.ts
+ * 
+ * Servicio dedicado exclusivamente a la autenticación (Login, Registro, Logout).
+ * Se comunica con las rutas /api/auth del backend.
+ */
+
 // authService.ts - Servicio de autenticación
 // Este archivo es el "puente" entre tu pantalla de Registro (Frontend) y tu Servidor (Backend).
 

@@ -1,3 +1,10 @@
+/**
+ * AgendarTurnoStep1.tsx
+ * 
+ * Paso 1 del flujo de reserva de turnos: Selección de Mascota.
+ * Muestra las mascotas del usuario para que elija a cuál quiere agendarle la cita.
+ */
+
 import { ChevronLeft } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 
@@ -68,8 +75,8 @@ export function AgendarTurnoStep1({
               key={mascota.id}
               onClick={() => onSelectMascota(mascota.id)}
               className={`w-full flex items-center gap-4 p-4 rounded-2xl transition-all ${selectedMascota === mascota.id
-                  ? `${colors.primary} text-white shadow-lg`
-                  : `${colors.inputBg} ${colors.secondaryHover} border ${colors.inputBorder}`
+                ? `${colors.primary} text-white shadow-lg`
+                : `${colors.inputBg} ${colors.secondaryHover} border ${colors.inputBorder}`
                 }`}
             >
               <div className={`w-12 h-12 rounded-xl flex items-center justify-center text-2xl ${selectedMascota === mascota.id ? 'bg-white/20' : colors.secondary
@@ -106,8 +113,8 @@ export function AgendarTurnoStep1({
         onClick={handleNext}
         disabled={!selectedMascota}
         className={`w-full py-4 rounded-xl transition-all ${selectedMascota
-            ? `${colors.primary} ${colors.primaryHover} text-white shadow-lg`
-            : `${colors.disabled} ${colors.disabledText} cursor-not-allowed`
+          ? `${colors.primary} ${colors.primaryHover} text-white shadow-lg`
+          : `${colors.disabled} ${colors.disabledText} cursor-not-allowed`
           }`}
       >
         Elegir sucursal

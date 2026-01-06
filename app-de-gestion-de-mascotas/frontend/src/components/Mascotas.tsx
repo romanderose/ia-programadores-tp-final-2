@@ -1,3 +1,11 @@
+/**
+ * Mascotas.tsx
+ * 
+ * Componente para la gestión de mascotas (CRUD).
+ * Permite listar, agregar, editar y visualizar las mascotas del usuario.
+ * Maneja tanto la vista de lista como el formulario de creación/edición.
+ */
+
 import { ChevronLeft, Plus, Pencil, Upload, Ban } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { useEffect, useState, useRef } from 'react';

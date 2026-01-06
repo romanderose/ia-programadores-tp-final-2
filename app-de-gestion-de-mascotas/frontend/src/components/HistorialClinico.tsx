@@ -1,3 +1,11 @@
+/**
+ * HistorialClinico.tsx
+ * 
+ * Componente complejo para la visualización y gestión del historial médico de las mascotas.
+ * Permite crear nuevas entradas (historiales) y agregar eventos (vacunas, controles, etc.) a ellos.
+ * Maneja estados de edición, creación y eliminación de eventos.
+ */
+
 import React, { useEffect, useState } from 'react';
 import { ChevronLeft, Plus, X, AlertCircle, Pencil, Trash2 } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';

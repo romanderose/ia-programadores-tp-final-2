@@ -1,3 +1,10 @@
+/**
+ * ElegirHorario.tsx
+ * 
+ * Paso 4 del flujo de reserva de turnos: Selección de Fecha y Hora.
+ * Genera dinámicamente los próximos días y horarios disponibles para el veterinario elegido.
+ */
+
 import { useState } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
@@ -103,8 +110,8 @@ export function ElegirHorario({ veterinarioId, onSelectHorario, onBack }: Elegir
                   setSelectedHora(null);
                 }}
                 className={`flex-shrink-0 flex flex-col items-center gap-1 p-3 rounded-xl transition-all min-w-[70px] ${selectedFecha === fecha
-                    ? `${colors.primary} text-white shadow-lg`
-                    : `${colors.inputBg} ${colors.secondaryHover} border ${colors.inputBorder}`
+                  ? `${colors.primary} text-white shadow-lg`
+                  : `${colors.inputBg} ${colors.secondaryHover} border ${colors.inputBorder}`
                   }`}
               >
                 <span className={selectedFecha === fecha ? 'text-white/80' : colors.textSecondary}>
@@ -131,8 +138,8 @@ export function ElegirHorario({ veterinarioId, onSelectHorario, onBack }: Elegir
               key={hora}
               onClick={() => setSelectedHora(hora)}
               className={`py-3 px-4 rounded-xl transition-all ${selectedHora === hora
-                  ? `${colors.primary} text-white shadow-lg`
-                  : `${colors.inputBg} ${colors.secondaryHover} ${colors.text} border ${colors.inputBorder}`
+                ? `${colors.primary} text-white shadow-lg`
+                : `${colors.inputBg} ${colors.secondaryHover} ${colors.text} border ${colors.inputBorder}`
                 }`}
             >
               {hora}
@@ -146,8 +153,8 @@ export function ElegirHorario({ veterinarioId, onSelectHorario, onBack }: Elegir
         onClick={handleConfirm}
         disabled={!selectedHora}
         className={`w-full py-4 rounded-xl transition-all ${selectedHora
-            ? `${colors.primary} ${colors.primaryHover} text-white shadow-lg`
-            : `${colors.disabled} ${colors.disabledText} cursor-not-allowed`
+          ? `${colors.primary} ${colors.primaryHover} text-white shadow-lg`
+          : `${colors.disabled} ${colors.disabledText} cursor-not-allowed`
           }`}
       >
         Continuar a confirmación

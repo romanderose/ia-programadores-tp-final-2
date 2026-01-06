@@ -1,3 +1,10 @@
+/**
+ * PetListScreen.tsx
+ * 
+ * Pantalla de listado de mascotas del usuario.
+ * Permite navegar al perfil de cada mascota o agregar una nueva.
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { ArrowLeft, Plus } from "lucide-react";

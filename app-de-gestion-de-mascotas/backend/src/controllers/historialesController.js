@@ -1,3 +1,11 @@
+/**
+ * historialesController.js
+ * 
+ * Controlador principal para los Historiales Clínicos (Estructura nueva).
+ * Maneja la creación de historiales y la consulta de eventos relacionados.
+ * Utiliza transacciones para asegurar la integridad de datos al crear historial + primer evento.
+ */
+
 const db = require('../db');
 
 exports.getAll = async (req, res) => {

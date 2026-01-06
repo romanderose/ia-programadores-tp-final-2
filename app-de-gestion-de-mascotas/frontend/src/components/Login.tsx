@@ -1,3 +1,11 @@
+/**
+ * Login.tsx
+ * 
+ * Componente de pantalla de inicio de sesión.
+ * Permite al usuario ingresar sus credenciales y seleccionar su rol (Dueño/Veterinario).
+ * Se comunica con el backend a través de authService.
+ */
+
 import { useState } from 'react';
 import { UserRole } from '../App';
 import { useTheme } from '../contexts/ThemeContext';
@@ -22,7 +30,7 @@ export function Login({ onLogin, onNavigateToRegister }: LoginProps) {
     e.preventDefault();
     setError('');
     setIsLoading(true);
-    
+
     try {
       /**
        * LLAMADA AL SERVICIO
@@ -30,7 +38,7 @@ export function Login({ onLogin, onNavigateToRegister }: LoginProps) {
        * El servidor buscará el usuario en MySQL y comparará los hashes de las claves.
        */
       const result = await loginUser(username, password);
-      
+
       if (result.success) {
         // Si el login es exitoso, notificamos a la App principal el rol elegido
         onLogin(selectedRole);
@@ -70,11 +78,10 @@ export function Login({ onLogin, onNavigateToRegister }: LoginProps) {
           <button
             type="button"
             onClick={() => setSelectedRole('dueno')}
-            className={`py-3 px-4 rounded-xl transition-all ${
-              selectedRole === 'dueno'
+            className={`py-3 px-4 rounded-xl transition-all ${selectedRole === 'dueno'
                 ? `${colors.primary} text-white shadow-lg`
                 : `${colors.secondary} ${colors.textSecondary} ${colors.secondaryHover}`
-            }`}
+              }`}
           >
             Dueño de mascota
           </button>
@@ -130,9 +137,8 @@ export function Login({ onLogin, onNavigateToRegister }: LoginProps) {
         {/* Botón de acción - Se bloquea mientras isLoading es true */}
         <button
           type="submit"
-          className={`w-full ${colors.primary} ${colors.primaryHover} text-white py-3 rounded-xl transition-all shadow-lg mt-6 ${
-            isLoading ? 'opacity-70 cursor-wait' : ''
-          }`}
+          className={`w-full ${colors.primary} ${colors.primaryHover} text-white py-3 rounded-xl transition-all shadow-lg mt-6 ${isLoading ? 'opacity-70 cursor-wait' : ''
+            }`}
           disabled={isLoading}
         >
           {isLoading ? 'Ingresando...' : 'Ingresar'}
@@ -141,7 +147,7 @@ export function Login({ onLogin, onNavigateToRegister }: LoginProps) {
 
       {/* Link para navegar al registro */}
       <div className="text-center mt-6">
-        <button 
+        <button
           onClick={(e) => {
             e.preventDefault();
             onNavigateToRegister(); // Cambia la vista al componente de Registro

@@ -1,7 +1,15 @@
+/**
+ * db.js
+ * 
+ * Módulo de conexión a la base de datos MySQL.
+ * Utiliza un pool de conexiones para manejar múltiples peticiones de manera eficiente.
+ */
+
 const mysql = require('mysql2');
 require('dotenv').config();
 
 // Creamos el pool de conexiones
+// Un 'pool' mantiene conexiones abiertas listas para usar, evitando abrir/cerrar conexión en cada petición
 const pool = mysql.createPool({
     host: process.env.DB_HOST || 'localhost',
     user: process.env.DB_USER || 'root',

@@ -1,3 +1,10 @@
+/**
+ * SeleccionSucursal.tsx
+ * 
+ * Paso 2 del flujo de reserva de turnos: Selección de Sucursal.
+ * Muestra un listado de las sedes veterinarias disponibles con su dirección y horario.
+ */
+
 import { ChevronLeft, MapPin, Clock } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 

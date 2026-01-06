@@ -1,3 +1,10 @@
+/**
+ * App.tsx
+ * 
+ * Componente raíz que maneja el enrutamiento manual (navegación) y el estado global de la sesión.
+ * Gestiona qué pantalla se muestra al usuario según su rol y acción actual.
+ */
+
 import { useState } from "react";
 import { Login } from "./components/Login";
 import { Registro } from "./components/Registro";
@@ -24,7 +31,13 @@ export type Screen =
   | "seleccion-sucursal"
   | "elegir-veterinario"
   | "elegir-horario"
-  | "confirmar-turno";
+  | "confirmar-turno"
+  | "dashboard"
+  | "petList"
+  | "petProfile"
+  | "medicalHistory"
+  | "registerDiagnosis"
+  | "appointment";
 
 export interface Mascota {
   id: string;
@@ -57,6 +70,34 @@ export interface Turno {
   sucursalId: string;
   fecha: string;
   hora: string;
+}
+
+export interface Pet {
+  id: string;
+  name: string;
+  species: string;
+  breed: string;
+  age: string | number;
+  image?: string;
+  birthDate?: string;
+}
+
+export interface Branch {
+  id: string;
+  name: string;
+  address: string;
+  schedule: string;
+}
+
+export interface Appointment {
+  id: string;
+  petName: string;
+  ownerName: string;
+  status: string;
+  time: string;
+  reason: string;
+  date: string;
+  vetName: string;
 }
 
 function AppContent() {

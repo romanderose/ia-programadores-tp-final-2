@@ -1,3 +1,10 @@
+/**
+ * ConfirmarTurno.tsx
+ * 
+ * Paso Final del flujo de reserva de turnos: Confirmación.
+ * Muestra un resumen de toda la selección (Mascota, Vet, Sucursal, Horario) y envía la reserva a la API.
+ */
+
 import { ChevronLeft, Check } from 'lucide-react';
 import { useTheme } from '../contexts/ThemeContext';
 import { apiService } from '../services/apiService';

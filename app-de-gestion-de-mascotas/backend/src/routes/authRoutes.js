@@ -1,3 +1,10 @@
+/**
+ * authRoutes.js
+ * 
+ * Define las rutas relacionadas con la autenticación de usuarios:
+ * Login, Registro, Logout y Verificación de nombre de usuario.
+ */
+
 const express = require('express');
 const router = express.Router();
 const authController = require('../controllers/authController');

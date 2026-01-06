@@ -1,3 +1,10 @@
+/**
+ * turnosController.js
+ * 
+ * Controlador para la gestión de turnos veterinarios.
+ * Permite reservar nuevos turnos y consultar los existentes.
+ */
+
 const db = require('../db');
 
 exports.getAll = async (req, res) => {

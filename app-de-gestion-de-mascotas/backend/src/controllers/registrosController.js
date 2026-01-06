@@ -1,3 +1,11 @@
+/**
+ * registrosController.js
+ * 
+ * Controlador para gestionar registros clínicos individuales.
+ * DEPRECADO: Este controlador se usa para la versión antigua de registros.
+ * Se recomienda usar historialesController para la nueva lógica.
+ */
+
 const db = require('../db');
 
 exports.getAll = async (req, res) => {

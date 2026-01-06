@@ -1,3 +1,10 @@
+/**
+ * app.js
+ * 
+ * Punto de entrada principal de la aplicación Backend.
+ * Configura el servidor Express, cors, y las rutas de la API.
+ */
+
 const express = require('express');
 const cors = require('cors');
 const authRoutes = require('./routes/authRoutes');

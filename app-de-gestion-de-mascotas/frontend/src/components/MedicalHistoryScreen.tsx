@@ -1,3 +1,10 @@
+/**
+ * MedicalHistoryScreen.tsx
+ * 
+ * Pantalla que muestra el historial clínico de una mascota.
+ * Permite visualizar diagnósticos pasados y agregar nuevos registros.
+ */
+
 import { Button } from "./ui/button";
 import { Card } from "./ui/card";
 import { ArrowLeft, Plus, Paperclip } from "lucide-react";
