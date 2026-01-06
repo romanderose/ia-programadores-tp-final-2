@@ -88,3 +88,6 @@ El workflow de CI (`.github/workflows/ci.yml`) se encarga de verificar automáti
 - En cada **Push** a la rama `main`.
 - En cada **Pull Request** dirigido a la rama `main`.
 
+### Nota sobre Base de Datos en CI
+En entornos de CI (detectado vía `process.env.CI`), la aplicación **omite el intento de conexión automática a MySQL** al iniciarse. Esto es intencional para evitar fallos en el pipeline cuando el servicio de base de datos no está presente, permitiendo que los tests unitarios se ejecuten correctamente sin dependencias externas.
+
