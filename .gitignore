@@ -1,0 +1,6 @@
+# Documentos Word
+*.docx
+informe-trabajo-final2.docx
+
+# Dependencias (Frontend y Backend)
+node_modules/

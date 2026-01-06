@@ -1,0 +1,36 @@
+Resumen del Trabajo de Testing Automatizado
+
+1. Pruebas Existentes
+   - No se detectaron pruebas automatizadas previas en el proyecto.
+   - El proyecto carecía de configuración de testing (jest/supertest).
+
+2. Pruebas Agregadas
+   - Se configuró el entorno de testing con Jest y Supertest.
+   - Pruebas Unitarias (Jest):
+     - Ubicación: backend/tests/unit/mascotasController.test.js
+     - Objetivo: Validar la lógica de negocio del controlador de mascotas.
+     - Cobertura: Se cubrieron los métodos getAll, create, delete y update.
+     - Detalles: Se mockeó la conexión a base de datos (mysql2) para evitar dependencias externas y no afectar la base productiva. Se validaron casos exitosos y manejo de errores (errores de BD, 404).
+   - Pruebas Funcionales/Integración (Supertest):
+     - Ubicación: backend/tests/integration/mascotasApi.test.js
+     - Objetivo: Validar el endpoint POST /api/mascotas y GET /api/mascotas.
+     - Detalles: Se creó una instancia de Express aislada para testear las rutas sin levantar el servidor principal (evitando conflictos de puertos). Se mockearon la base de datos y el middleware de autenticación.
+
+3. Herramientas Utilizadas
+   - Jest: Runner de pruebas y framework de aserciones.
+   - Supertest: Librería para simular peticiones HTTP a la aplicación Express.
+
+4. Métricas de Calidad y Cobertura
+   - Se configuró Jest para generar reportes de cobertura (Code Coverage).
+   - Resultados obtenidos para `mascotasController.js`:
+     - Statements: 100%
+     - Branches: 100%
+     - Functions: 100%
+     - Lines: 100%
+   - La cobertura global es parcial (~24%) ya que el alcance del trabajo fue implementar las pruebas requeridas para el módulo de mascotas.
+
+5. Ejecución
+   - Para correr los tests y ver el reporte de cobertura:
+     cd backend
+     npm run test:coverage
+
