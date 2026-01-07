@@ -6,7 +6,8 @@
  * Incluye automáticamente el token JWT en los headers.
  */
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3001/api';
+const API_URL = import.meta.env.VITE_API_URL || 'https://pets-backend-ipi7.onrender.com/api';
+console.log('DEBUG: API_URL in apiService is:', API_URL);
 
 function getHeaders() {
     const token = localStorage.getItem('token');

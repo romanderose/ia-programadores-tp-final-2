@@ -10,7 +10,7 @@
 
 // Definimos la URL de tu API de Node.js. 
 // Si tu servidor corre en otro puerto (ej: 5000), cámbialo aquí.
-const API_URL = (import.meta.env.VITE_API_URL || 'http://localhost:3001/api') + '/auth';
+const API_URL = (import.meta.env.VITE_API_URL || 'https://pets-backend-ipi7.onrender.com/api') + '/auth';
 console.log('DEBUG: API_URL in authService is:', API_URL);
 
 interface User {
