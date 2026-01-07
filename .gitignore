@@ -4,3 +4,9 @@ informe-trabajo-final2.docx
 
 # Dependencias (Frontend y Backend)
 node_modules/
+
+# Directorios de Build
+app-de-gestion-de-mascotas/frontend/build/
+app-de-gestion-de-mascotas/frontend/dist/
+build/
+dist/
